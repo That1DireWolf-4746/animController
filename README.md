@@ -5,7 +5,7 @@ Animation controller library for Figura
 put ``animController.startOfTick()`` at the start of the ``events.tick()`` function  
 put ``animController.endOfTick()`` at the end of the ``events.tick()`` function  
 put ``animController.init()`` in ``events.entity_init()`` function  
-to define actual animations (exceptions from controller system) use ``animController.addOverride(<animation name>)`` in ``events.entity_init()`` function before ``animController.init()``    
+to define actual animations (exceptions from controller system) use ``animController.addOverride(<string: animation id>)`` in ``events.entity_init()`` function before ``animController.init()``    
 to register animation keyframe use ``animController.regAnim(<string: name>, <int: duration in ticks>, <int: strength from 0 to 1>, <bool: whether the animation should be paused or stopped>, <int: blend strength>)``  
 animations are played similar to blender shape keys, with the shape keys defined via blockbench animations and keyframed in the script. multiple animations may be blended together.  
 ## example use cases
