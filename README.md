@@ -11,4 +11,5 @@ animations are played similar to blender shape keys, with the shape keys defined
 ## example use cases
 with some math this can be used to mimic inverse kinematics for low-segment-count limbs or tails. for something like octopus tentacles it is suggested to use an actual IK library.
 ## what this cannot do
-there are no pings implemented in animController, if you want to do anything with host functions send the information over pings and call the animation from there.
+there are no pings implemented in animController, if you want to do anything with host functions send the information over pings and call the animation from there.  
+if you want to play blockbench animations call the animation as usual, animController is exclusively used for 'shape key animations' and cannot play the full animation.
