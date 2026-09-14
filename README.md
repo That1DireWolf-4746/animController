@@ -14,4 +14,5 @@ adaptive crouching under blocks for avatars over vanilla player height.
 fluid transition between 'stances' such as a bipedal and quadrupedal slugcat model.
 ## what this cannot do
 there are no pings implemented in animController, if you want to do anything with host functions send the information over pings and call the animation from there.  
-if you want to play blockbench animations call the animation as usual, animController is exclusively used for 'shape key animations' and cannot play the full animation.
+if you want to play blockbench animations call the animation as usual, animController is exclusively used for 'shape key animations' and cannot play the full animation.  
+animController has not been tested in conjunction with any other animation library. if using with something like jimmyanims, report any compatibility bugs here and i'll try to patch them.
