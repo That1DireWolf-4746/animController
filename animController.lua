@@ -34,7 +34,7 @@ function animController.init()
     end
 end
 
-function animController.regAnim(n, d, s, h, b) -- name: string, duration: int, strength: [-1, 1], h: bool, blending [0, 1]
+function animController:regAnim(n, d, s, h, b) -- name: string, duration: int, strength: [-1, 1], h: bool, blending [0, 1]
   if playing[n] ~= nil then
     -- modify existing animation with new parameters
     if playing[n]["s"] == world:getTime() then
@@ -53,7 +53,6 @@ function animController.regAnim(n, d, s, h, b) -- name: string, duration: int, s
   else
     -- add a new animation to the queue
     newAnim = {}
-    
     -- format newAnim table
     newAnim["s"] = world:getTime()
     newAnim["e"] = world:getTime() + d
