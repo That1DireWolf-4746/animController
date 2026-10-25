@@ -22,7 +22,7 @@ function animController.init()
   for _, a in pairs(animations:getAnimations()) do
       if overrides[a:getName()] ~= nil then
         -- special animation overrides
-        overrides[a:getName()]:stop():setBlend(1)
+        overrides[a:getName()]:setBlend(1)
       else
         a:play():pause():setTime(0):setBlend(0)
         animTargets[a:getName()] = 0
@@ -127,7 +127,16 @@ end
 
 function initAnim(n, d, s, p)
   if animList[n] == nil then
-    localprint("[ERROR] invalid animation!")
+    localprint({
+      text = "[ERROR]",
+      underlined = true,
+      color = "red"
+    },
+    {
+      text = " Invalid animation!",
+      underlined = false,
+      color = "red"
+    })
     return nil
   end
   if animEndTime[n] > world:getTime(delta) then return animList[n] end
@@ -140,7 +149,17 @@ function initAnim(n, d, s, p)
 end
 
 local function missingAnimErrorMsg(anim)
-    localprint("[ERROR] animation " .. anim .. " missing!")
+    str = " Animation " .. anim .. " missing!"
+    localprint({
+      text = "[ERROR]",
+      underlined = true,
+      color = "red"
+    },
+    {
+      text = str,
+      underlined = false,
+      color = "red"
+    })
 end
 
 function table.contains(table, element)
@@ -154,7 +173,7 @@ end
 
 function localprint(s)
   if host:isHost() then
-    print(s)
+    printJson(s)
   end
 end
 
