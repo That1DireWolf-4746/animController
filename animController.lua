@@ -10,11 +10,11 @@ local animInit = {}
 local overrides = {}
 local playing = {}
 
-function animController.addOverride(anim)
+function animController.addOverride(name, anim)
   if anim == nil then 
-    missingAnimErrorMsg(anim)
+    missingAnimErrorMsg(name)
   else
-    table.insert(overrides, anim)
+    overrides[name] = anim
   end
 end
 
